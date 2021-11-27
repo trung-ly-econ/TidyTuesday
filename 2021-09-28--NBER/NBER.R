@@ -22,4 +22,7 @@ nber <- ggplot(data = total_by_month, mapping = aes(x = month, y = number_of_pap
   geom_text(mapping = aes(label = number_of_papers), vjust = -.5)+labs(title = "Total number of papers by month",
                                                                        caption = "Data: NBER data set #TidyTuesday | Visualization: Trung Ly (@trungly_econ)")
 
-ggsave(filename = "2021-09-28--NBER/nber.jpeg", plot = nber)
+nber
+
+ggsave(filename = "2021-09-28--NBER/nber.jpeg", 
+       width = 13, height = 8, plot = nber)
