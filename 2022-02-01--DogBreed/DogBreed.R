@@ -1,3 +1,9 @@
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("janitor")) install.packages("janitor")
+if (!require("gganimate")) install.packages("gganimate")
+if (!require("viridis")) install.packages("viridis")
+
+# Be sure to install the gifski package if you haven't already done so for this code to run
 library(tidyverse)
 library(janitor)
 library(gganimate)
@@ -30,6 +36,6 @@ top10_plot <- ggplot(data = top_data, mapping = aes(x = year, y = rank, color = 
   theme(legend.title = element_text(face = "bold")) +
   transition_reveal(year)
   
-  
+
 final_plot <- animate(top10_plot, renderer = gifski_renderer("top10breeds.gif"), 
-                      width = 18, height = 10, units = "in", res = 300, dev= "png", end_pause = 10)
+                      width = 8, height = 5, units = "in", res = 300, dev= "png", end_pause = 10)
