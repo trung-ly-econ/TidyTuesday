@@ -1,3 +1,9 @@
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("viridis")) install.packages("viridis")
+if (!require("ggridges")) install.packages("ggridges")
+if (!require("patchwork")) install.packages("patchwork")
+
+
 library(tidyverse)
 library(viridis)
 library(ggridges)
@@ -63,4 +69,4 @@ rating_dist <- ggplot(data = data_rating2, mapping = aes(x = rating,
   )  
 
 ggsave(filename = "2021-11-23--Dr.Who/DrWho.jpeg", 
-       width = 17, height = 10, plot = final_plot)
+       width = 10, height = 10, plot = final_plot)
